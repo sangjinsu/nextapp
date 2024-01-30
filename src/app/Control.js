@@ -9,7 +9,7 @@ export function Control() {
     const id = params.id;
 
     const onDelete = async () => {
-        const resp = await fetch(`http://localhost:9999/topics/${id}`, {
+        const resp = await fetch(`${process.env.NEXT_PIBLIC_API_URL}/${id}`, {
             method: 'DELETE'
         });
         await resp.json();

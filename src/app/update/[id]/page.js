@@ -10,7 +10,7 @@ export default function Update(props) {
     const {id} = props.params;
 
     async function refresh() {
-        const resp = await fetch(`http://localhost:9999/topics/${id}`);
+        const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/topics/${id}`);
         const topic = await resp.json();
         setTitle(topic.title);
         setBody(topic.body);
